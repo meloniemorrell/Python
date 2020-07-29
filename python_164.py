@@ -1,25 +1,44 @@
 import sqlite3
 
+conn = sqlite3.connect('File_DB.db')
 
-try:
-    sqliteConnection = sqlite3.connect('File_DB.db')
-    cursor = sqliteConnection.cursor()
-    print("Successfully Connected to SQLite")
 
-    sqlite_insert_query =  """INSERT INTO FILES
-                            (FileId, FileName) 
-                           VALUES
-                          (1,'information.docx','Hello.txt','myImage.png', 
-                           'myMovie.mpg','World.txt','data.pdf','myPhotol.jpg',500)"""
-                            
-    count = cursor.execute(sqlite_insert_query)
-    sqliteConnection.commit()
-    print("Record inserted successfully into FILES table ", cursor.rowcount)
-    cursor.close()
 
-except sqlite3.Error as error:
-    print("Failed to insert data into sqlite table", error)
-finally:
-    if (sqliteConnection):
-        sqliteConnection.close()
-        print("The SQLite connection is closed")
+with conn:
+    cur = conn.cursor()
+    cur.execute("CREATE TABLE IF NOT EXISTS tbl_FILES(\
+    ID INTEGER PRIMARY KEY AUTOINCREMENT, \
+    col_FileName TEXT \
+    )")
+    conn.commit()
+conn.close()
+
+
+
+conn = sqlite3.connect('File_DB.db')
+
+
+
+with conn:
+    cur = conn.cursor()
+    cur.execute("INSERT INTO tbl_FILES(col_FileName) VALUES(?)",\
+                ('information.docx'))
+    cur.execute("INSERT INTO tbl_FILES(col_FileName) VALUES(?)",\
+                ('Hello.txt'))
+    cur.execute("INSERT INTO tbl_FILES(col_FileName) VALUES(?)",\
+                ('myImage.png'))
+    cur.execute("INSERT INTO tbl_FILES(col_FileName) VALUES(?)",\
+                ('myMovie.mpg'))
+    cur.execute("INSERT INTO tbl_FILES(col_FileName) VALUES(?)",\
+                ('World.txt'))
+    cur.execute("INSERT INTO tbl_FILES(col_FileName) VALUES(?)",\
+                ('data.pdf'))
+    cur.execute("INSERT INTO tbl_FILES(col_FileName) VALUES(?)",\
+                ('myPhotol.jpg'))
+    conn.commit()
+conn.close()
+
+                
+
+
+

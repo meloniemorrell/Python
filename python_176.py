@@ -1,13 +1,13 @@
 class auto:
     engine = ' '
-    "all"-wheel drive = True
-    motor = ' ' 
+    all_wheeldrive = True
+    motor = ' '
     wheels = True
-    power steering = True
+    power_steering = True
 
 class foreign(auto):
     compact = True
-    aesthetic appeal = True
+    aesthetic_appeal = True
     fuel = ' '
 
 
@@ -16,6 +16,7 @@ class domestic(auto):
     larger = True
     fuel  = ' '
     economical = True
+
 
 
 

@@ -38,7 +38,15 @@ with conn:
     conn.commit()
 conn.close()
 
-                
+conn = sqlite3.connect('File_DB.db')
+
+with conn:
+    cur = conn.cursor()
+    cur.executive("SELECT col_FileName FROM tbl_FILES WHERE col_FileName = '().txt'")
+    varFiles = cur.fetchall()
+    for item in varFiles:
+        msg = "File Name: ()".format(item[0])
+    print(msg)
 
 
 

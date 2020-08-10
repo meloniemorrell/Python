@@ -10,3 +10,5 @@ print(object._name)
 object = soccer_player() #protected object
 print(object.__score)
 
+
+

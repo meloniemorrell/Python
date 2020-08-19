@@ -4,6 +4,7 @@ import os
 import glob
 import datetime
 from tkinter import filedialog
+from python_232 import*
 
 
 # Create the master object
@@ -14,9 +15,9 @@ master.title('File Transfer')
 master.minsize(400,150)
 
 
-originPath = '/Users/Mely Mel/Desktop/A'
+originPath = '/Users/Mely Mel/Desktop/SourceA'
 
-originPath = '/Users/Mely Mel/Desktop/B'
+originPath2 = '/Users/Mely Mel/Desktop/Destination/B'
 
 
 
@@ -32,7 +33,7 @@ def opendirectory():
         print('Cancelled') 
 
 def opendirectory2():
-   rep = filedialog.askdirectory(parent=master, initialdir=originPath)
+   rep = filedialog.askdirectory(parent=master, initialdir=originPath2)
    if rep:
         e2.delete(0)
         e2.insert(0,rep)
@@ -40,7 +41,14 @@ def opendirectory2():
    else:
         print('Cancelled') 
 
- 
+
+def GetFileList():
+    '''
+    Return a list of filename matching the given path and file type
+    '''
+    return glob.glob('/Users/Mely Mel/Desktop/*/*.txt')
+    
+
 
 
 # Create the entry objects using master
@@ -67,7 +75,7 @@ button2.grid(row=1, column=0, columnspan=1, ipadx=19, pady=10, padx=20)
 
 
 # Create 3rd button
-button3 = tk.Button(master, text="Check for files...")
+button3 = tk.Button(master, text="Check for files...", command = GetFileList) 
 button3.grid(row=2, column=0, columnspan=1, ipadx=2, pady=10, padx=5)
 
 

@@ -1,10 +1,10 @@
 import tkinter as tk
 import shutil
 import os
-import glob
+import stat
 import datetime
+import glob
 from tkinter import filedialog
-from python_232 import*
 
 
 # Create the master object
@@ -15,10 +15,12 @@ master.title('File Transfer')
 master.minsize(400,150)
 
 
+filetype = '.txt'
+
 originPath = '/Users/Mely Mel/Desktop/SourceA'
 
 originPath2 = '/Users/Mely Mel/Desktop/Destination/B'
-
+files = os.listdir(originPath)
 
 
 #first function paired with first button
@@ -30,7 +32,10 @@ def opendirectory():
         e1.insert(0,rep)
 
     else:
-        print('Cancelled') 
+        print('Cancelled')
+
+#2nd function paired with 2nd button
+
 
 def opendirectory2():
    rep = filedialog.askdirectory(parent=master, initialdir=originPath2)
@@ -41,13 +46,25 @@ def opendirectory2():
    else:
         print('Cancelled') 
 
+#if file was accessed or changed  then it needs to be moved to from source to destination folder else print cancelled
 
-def GetFileList():
-    '''
-    Return a list of filename matching the given path and file type
-    '''
-    return glob.glob('/Users/Mely Mel/Desktop/*/*.txt')
-    
+
+def GetFileList(originPath, filetype):
+    # Create list of text filenames in Origin folder
+   
+
+    for file in fileList:
+        # Get last modified date and today's date
+        modifyDate = datetime.datetime.fromtimestamp(os.path.getmtime(file))
+        todaysDate = datetime.datetime.today()
+        
+        
+        # If modified within last 24 hours, then copy to destination folder
+        modifyDateLimit = modifyDate + datetime.timedelta(days=1)
+
+        # If the file was edited less then 24 hours ago then copy it
+        if modifyDateLimit > todaysDate:
+            shutil.copy2(originPath, originPath2)
 
 
 

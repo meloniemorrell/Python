@@ -1,6 +1,9 @@
 # Importing necessary packages 
 import tkinter as tk
 import os
+import shutil
+import glob
+import datetime
 from tkinter import filedialog
 from tkinter import messagebox
 
@@ -43,17 +46,26 @@ def DestinationBrowse():
         print('Cancelled')
 
 
+
+src_dir = "C:\\Users\\Mely Mel\\Desktop\\SourceA\\"
+dst_dir = "C:\\Users\\Mely Mel\\Desktop\\Destination B\\" 
+files = os.listdir(src_dir)
+path = 
+
+
 def DestinationCheck():
-    rep = filedialog.askdirectory()
-    if rep:
-        print('Found')
+    for i in files:
+            # Get last modified date and today's date
+            modifyDate = os.path.getmtime
+            creationDate = os.path.getctime
+            modifyDateLimit = timedelta(days=1)
+            shutil.move(src_dir+i,dst_dir)
+         
+      
 
-    else:
-        print('Cancelled')
-		
 
 
-# Create the entry objects using master
+#Create the entry objects using master
 e1 = tk.Entry(master)
 e2 = tk.Entry(master)
    
@@ -70,7 +82,7 @@ b1 = tk.Button(master)
 
 
 
-#create first button
+#create 1st button
 button1 = tk.Button(master, text="Browse...", command = SourceBrowse)
 button1.grid(row=0, column=0, columnspan=1, ipadx=19,pady=10, padx=20)
 

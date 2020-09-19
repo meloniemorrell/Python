@@ -1,16 +1,21 @@
-from ABC import ABC, abstractmethod
-class smartphone(ABC):
-    def communicate(self,text)
-        print('Message: ', text)
+from abc import ABC, abstractmethod
+
+class touchscreen(ABC):
+    def communicate(self):
+        return self.communicate
+        
+
+    
     @abstractmethod
-    def touchscreen(self, text):
+    def tablet(self):
         pass
 
-class tablet(self,text):
-    def touchscreen(self,text)
+class smartphone(touchscreen):
+    def touchscreen(self):
+        return self.touchscreen
     
-        print('Message: ', text)
+obj1 = smartphone()
+obj2 = touchscreen()
 
-obj = tablet()
-obj.communicate()
-obj.touchscreen()
+print(obj1.smartphone())
+print(obj2.touchscreen())

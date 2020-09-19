@@ -18,7 +18,7 @@ with conn:
 	cur.execute("INSERT INTO tbl_techacad (fileList) VALUES \
 				('information.docx'), \
 				('Hell.txt'), \
-				('myImage.png', \
+				('myImage.png'), \
 				('myMovie.mpg'), \
 				('World.txt'), \
 				('data.pdf'), \
@@ -31,7 +31,7 @@ conn = sqlite3.connect('test.db')
 
 with conn:
 	cur = conn.cursor()
-	cur.execute("SELECT col_fileList WHERE col_fileList = '.txt'")
+	cur.execute("SELECT column1 FROM tbl_techacad WHERE col_fileList LIKE '%xt'")
         varFile = cur.fetchall()
 	for item in varFile:
             msg = "File Name: {}\".format(item[0])

@@ -11,11 +11,8 @@ class touchscreen(ABC):
         pass
 
 class smartphone(touchscreen):
-    def touchscreen(self):
-        return self.touchscreen
+    def tablet(self):
+        
     
-obj1 = smartphone()
-obj2 = touchscreen()
-
-print(obj1.smartphone())
-print(obj2.touchscreen())
+        obj1 = smartphone()
+        obj1.tablet()

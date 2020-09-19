@@ -16,14 +16,14 @@ conn = sqlite3.connect('test.db')
 
 with conn:
 	cur = conn.cursor()
-	cur.execute("INSERT INTO tbl_techacad (fileList) VALUES (?), \
+	cur.execute("INSERT INTO tbl_techacad (fileList) VALUES \
 				('information.docx'), \
 				('Hell.txt'), \
 				('myImage.png'), \
 				('myMovie.mpg'), \
 				('World.txt'), \
 				('data.pdf'), \
-				('myPhoto.jpg')
+				('myPhoto.jpg')"
 				)
 	conn.commit()
 conn.close()
@@ -33,9 +33,9 @@ conn = sqlite3.connect('test.db')
 with conn:
 	cur = conn.cursor()
 	cur.execute("SELECT column1 FROM tbl_techacad WHERE col_fileList LIKE '%xt'")
-	varFile = cur.fetchone()
+	varFile = cur.fetchall()
 	for item in varFile:
-            msg = 'Files ending in txt'.format()
-        print(msg)	
-				
+            msg = 'Files name: {}'.format(item)
+            print(msg)	
+                                    
 				

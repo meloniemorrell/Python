@@ -12,7 +12,7 @@ class touchscreen(ABC):
 
 class smartphone(touchscreen):
     def tablet(self):
-        
+        print('Enter pin here:')
     
-        obj1 = smartphone()
-        obj1.tablet()
+obj1 = smartphone()
+obj1.tablet()

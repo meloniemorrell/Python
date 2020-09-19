@@ -32,7 +32,7 @@ conn = sqlite3.connect('test.db')
 
 with conn:
 	cur = conn.cursor()
-	cur.execute("SELECT column1 FROM tbl_techacad WHERE col_fileList LIKE '%xt'")
+	cur.execute("SELECT FROM tbl_techacad WHERE col_fileList LIKE '%xt'")
 	varFile = cur.fetchall()
 	for item in varFile:
             msg = 'Files name: {}'.format(item)

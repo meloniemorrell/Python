@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="de84bb69-26a2-4d94-98d6-e7805a1c87a8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +28,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/django_checkbook/checkbook" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Student\Documents\GitHub\Python\django_checkbook\django_checkbook\checkbook" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -61,10 +71,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="453" y="139" key="FileChooserDialogImpl" timestamp="1601244970658">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="453" y="139" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601244970658" />
+    <state x="174" y="8" key="SettingsEditor" timestamp="1601241728716">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="174" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601241728716" />
     <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601156252021">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1601156252021" />
+    <state x="0" y="0" width="587" height="728" key="find.popup" timestamp="1601242945400">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1601242945400" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601242187800">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601242187800" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
